@@ -1,0 +1,141 @@
+/* General
+======================== */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: #333;
+}
+
+li { list-style: none; }
+a { text-decoration: none; color: inherit;}
+
+#wrap {
+    width: 100%;
+    background-image: url('images/bg.png');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    background-attachment: fixed; /* 스크롤 동작 제어: 배경 고정 */
+}
+
+/* Header
+======================== */
+header {
+    width: 100%;
+    height: 400px;
+    background-color: #151515;
+    text-align: center;
+    font-family: 'Fredoka', sans-serif;
+    line-height: 400px;
+    overflow: hidden;
+    cursor: default;
+}
+
+header h1 {
+    color: #807776;
+    font-size: 200px;
+    font-weight: bold;
+    word-spacing: 200px; /* 단어 사이 간격 */
+    letter-spacing: -20px; /* 글자 겹치기 */
+    white-space: nowrap; /* 한 줄로 유지 */
+    transition: all .5s ease-out;
+}
+
+.point {
+    position: relative;
+    top: 0;
+    width: 0;
+    transition: top 1s ease-out;
+}
+
+header:hover h1 {
+    color: #fff;
+    word-spacing: 300px;
+}
+header:hover .point {
+    top: -400px;
+    width: 650px;
+}
+
+/* GNB
+======================== */
+nav {
+    background-color: rgba(0, 0, 0, .7);
+    padding: 20px 0;
+    text-align: center;
+}
+
+.gnb {
+    padding: 0 20px;
+    background-color: #807776;
+    border-radius: 30px;
+    display: inline-block; /* 가로 크기만큼만 차지 */
+    overflow: hidden;
+}
+
+.gnb li {
+    float: left; /* 가로 정렬 */
+}
+
+.gnb li a {
+    display: block; /* 가로 전체 영역 클릭 가능 */
+    height: 50px;
+    line-height: 50px; /* height와 같은 크기 = 세로 중앙 정렬 */
+    padding: 0 20px;
+    border: 5px solid transparent; /* 투명한 border */
+    color: #333;
+}
+
+.gnb li a:hover {
+    border-bottom: 5px solid #333;
+}
+
+/* Grid
+======================== */
+.grid {
+    width: 960px;
+    margin: 0 auto; /* center */
+    padding-top: 100px;
+    padding-bottom: 100px;
+    overflow: hidden;
+}
+
+.grid li {
+    margin: 10px;
+    width: 300px;
+    float: left; /* 가로 정렬 */
+}
+
+.grid li:nth-child(2),
+.grid li:nth-child(5),
+.grid li:nth-child(8) {
+    position: relative;
+    top: -50px;
+}
+
+.container {
+    background-color: #93572E;
+    color: #fff;
+    border-radius: 20px;
+    border-bottom: 10px solid #4b260a;
+    overflow: hidden;
+}
+
+.container::before {
+    content: '';
+    display: block;
+    height: 50px;
+    background-image: url('images/ac-top.png');
+}
+
+.container h2 {
+    margin: 20px;
+}
+
+.container p {
+    opacity: .5;
+    margin: 0 20px 20px 20px;
+}

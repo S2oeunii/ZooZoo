@@ -1,0 +1,155 @@
+/*General*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: #333;
+}
+
+li { list-style: none; }
+a { text-decoration: none; color: inherit;}
+
+#wrap {
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('images/bg.png');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    background-attachment: fixed; /* 스크롤 동작 제어: 배경 고정 */
+}
+
+/*Header*/
+header {
+    width: 100%;
+    /* margin: 0 auto; */
+    padding: 10vh 0;
+    text-align: center;
+    position: relative;
+    background-color: #151515;
+    overflow: hidden; /* header 영역 벗어난 자식요소 숨김 */
+}
+
+.zoozoo {
+    display: flex;
+    justify-content: center;
+    gap: 15vw;
+}
+
+.zoozoo h1 {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 18vw;
+    font-weight: 700;
+    color: #817875;
+}
+
+.point {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 5%);
+}
+
+header:hover .point {
+    animation: slideUp 1s forwards;
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translate(-50%, 5%);
+    }
+    100% {
+        transform: translate(-50%, -55%);
+    }
+}
+
+/*GNB*/
+.gnb {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 2.5vh 0;
+    margin-bottom: 18vh;
+    background-color: #000000b0;
+}
+
+.gnb ul {
+    display: flex;
+    background-color: #817875;
+    /* padding: 3vh 1.5vw; */
+    padding: 0 1.5vw; /* 상하 패딩 제거 */
+    overflow: hidden; /* 모서리 넘어가는 자식요소 숨김 */
+    border-radius: 50px;
+}
+
+.gnb ul li {
+    display: flex; /* li가 ul의 전체 높이 차지 */
+}
+
+.gnb ul li a {
+    display: flex;
+    align-items: center; /* 수직 중앙 정렬 */
+    height: 8vh; /* padding이 아닌 height로 높이 조절 */
+    padding: 0 2vw;
+    font-size: 1.3vw;
+    border-top: 1vh solid transparent; /* 투명 border: 호버 시 글자 올라감 방지 */
+    border-bottom: 1vh solid transparent;
+    box-sizing: border-box; /* 패딩 포함 높이 계산 */
+}
+
+.gnb ul li a:hover {
+    border-bottom: 1vh solid #222;
+    cursor: pointer;
+}
+
+/*Contents*/
+.contents {
+    width: 80%;
+    margin: 0 auto;
+    padding-bottom: 10vh;
+}
+
+.animal_list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    gap: 1.5vw;
+}
+
+.animal_list li img {
+    width: 100%;
+    height: auto;
+    /* margin: -1vh 0; */
+}
+
+.animal_list li:nth-child(2),
+.animal_list li:nth-child(5),
+.animal_list li:nth-child(8) {
+    transform: translateY(-8vh); /* 가운데 열을 위로 이동 */
+}
+
+.ac-top {
+    margin: -1vh 0;
+    border-radius: 1vw 1vw 0 0;
+    pointer-events: none;
+}
+
+.animal_text {
+    display: flex;
+    flex-direction: column; /* 세로 정렬 */
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2vw;
+    padding: 2vw;
+    background-color: #a06437;
+    border-radius: 0 0 1vw 1vw;
+    box-shadow: 0 1.5vh 0 0 #5b3112;
+    margin-bottom: 1.5vh; /* 그림자 두께만큼 여백 */
+    color: #fff;
+}
+
+.animal_text p {
+    opacity: .5;
+}
